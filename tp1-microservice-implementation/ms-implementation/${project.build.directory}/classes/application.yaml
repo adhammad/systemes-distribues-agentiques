@@ -1,0 +1,11 @@
+spring:
+  application:
+    name: microservice-implementation
+  datasource:
+    url: jdbc:h2:mem:bank-account
+  h2:
+    console:
+      enabled: true
+
+server:
+    port: 8881
