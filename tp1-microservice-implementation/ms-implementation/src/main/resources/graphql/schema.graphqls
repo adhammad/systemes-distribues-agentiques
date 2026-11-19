@@ -1,0 +1,30 @@
+type Query {
+    getAllBankAccounts: [BankAccountResponseDTO]
+    getBankAccountById(id: String): BankAccountResponseDTO
+}
+
+type Mutation {
+    deleteBankAccount(id: String): String
+    saveBankAccount(bankAccount: BankAccountRequestDTO): BankAccountResponseDTO
+    updateBankAccount(id: String, bankAccount: BankAccountRequestDTO): BankAccountResponseDTO
+}
+
+input BankAccountRequestDTO {
+    balance : Float,
+    currency : String,
+    accountType : AccountType,
+}
+
+type BankAccountResponseDTO {
+    id : String,
+    createdAt : String,
+    balance : Float,
+    currency : String,
+    accountType : AccountType,
+}
+
+enum AccountType {
+    CREDIT,
+    DEBIT
+}
+
